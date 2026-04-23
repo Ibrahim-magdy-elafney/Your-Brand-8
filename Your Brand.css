@@ -9,20 +9,61 @@ body {
 
     background: #080808;
     color: white;
-    margin-left: 20px;
+    margin: 0;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
 
 }
 
-header {
+@media (max-width: 768px) {
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
 
+    header {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px;
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+
+    }
+
+    .box {
+
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+
+        align-items: center;
+
+        color: #fff;
+        background: #1a1a1a;
+        border: 1px solid gray;
+
+    }
+
+}
+
+.box li {
+    width: 100%;
+    text-align: center;
+}
+
+ul {
+    padding-left: 20px;
 }
 
 .logo {
@@ -34,20 +75,24 @@ header {
 
 }
 
-section {
-    background: #121212;
-    margin: 20px;
-    padding: 40px;
-    border-radius: 10px;
-}
+@media (max-width: 768px) {
 
-footer {
+    section {
+        background: #121212;
+        margin: 10px;
+        padding: 15px;
+        border-radius: 10px;
+    }
 
-    margin-left: 50px;
-    background: #121212;
-    margin: 20px;
-    padding: 40px;
-    border-radius: 10px;
+    footer {
+
+        margin-left: 50px;
+        background: #121212;
+        margin: 10px;
+        padding: 15px;
+        border-radius: 10px;
+
+    }
 
 }
 
@@ -62,6 +107,22 @@ h3 {
 
 }
 
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+}
+
 
 button {
     background: #ff3c00;
@@ -69,7 +130,15 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    width: fit-content;
 }
+
+@media (max-width: 768px) {
+    button {
+        width: 100%;
+    }
+}
+
 
 button:hover {
 
@@ -80,44 +149,65 @@ button:hover {
 .flex {
 
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     gap: 20px;
+    align-items: center;
+
+}
+
+@media (max-width: 768px) {
+
+    .flex {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
 
 }
 
 .text {
 
-    max-width: 500px;
+    width: 100%;
 
 }
 
 img {
 
     width: 100%;
-    max-width: 400px;
     height: auto;
+    border-radius: 10px;
 
 }
 
-.box {
+@media (max-width: 768px) {
+    img {
+        max-height: 250px;
+        object-fit: cover;
+    }
+}
 
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: normal;
+select {
+
+    color: white;
+
+}
+
+.Username {
+
+    color: white;
+
+}
 
 
-    display: flex;
-    gap: 25px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.text {
 
-    color: #fff;
-    background: #1a1a1a;
-    border: 1px solid gray;
-    padding: 15px;
-    align-items: center;
+    color: white;
+
+}
+
+.email {
+
+    color: white;
+
 }
 
 .box a {
@@ -125,16 +215,13 @@ img {
     text-decoration: none;
 }
 
-.mainbox {
-
+.menu-card {
     display: flex;
-    flex-direction: column;
-
+    gap: 20px;
 }
 
-.mainbox a {
-
-    color: #fff;
-    text-decoration: none;
-
+@media (max-width: 768px) {
+    .menu-card {
+        flex-direction: column;
+    }
 }
