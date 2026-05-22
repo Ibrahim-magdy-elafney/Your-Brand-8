@@ -1,51 +1,117 @@
 const form = document.getElementById("form");
-const meal = document.getElementById("meal");
+
+const program = document.getElementById("Program");
+
 const duration = document.getElementById("duration");
+
 const result = document.getElementById("result");
+
 const total = document.getElementById("total");
 
 form.addEventListener("submit", function (e) {
 
     e.preventDefault();
 
+    // البيانات الأساسية
     const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const messageField = document.getElementById("message").value;
 
-    if (!name || !email) {
+    const email = document.getElementById("email").value.trim();
+
+    const phoneNumber = document.getElementById("phoneNumber").value.trim();
+
+    const messageField = document.getElementById("message").value.trim();
+
+    // المواعيد
+    const date1 = document.querySelectorAll(".date")[0].value;
+
+    const time1 = document.querySelectorAll(".time")[0].value;
+
+    const date2 = document.querySelectorAll(".date")[1].value;
+
+    const time2 = document.querySelectorAll(".time")[1].value;
+
+    // التحقق من البيانات
+    if (!name || !phoneNumber || !date1 || !time1) {
+
         result.style.color = "red";
-        result.innerText = "Please fill all fields!";
+
+        result.innerText = "Please fill the required fields!";
+
         return;
+
     }
 
-    const price = Number(meal.value);
-    const months = Number(duration.value);
+    // بيانات الاشتراك
+    const price = Number(program.value);
 
-    const programText = meal.options[meal.selectedIndex].text;
+    const months = Number(duration.value);
 
     const finalPrice = price * months;
 
-    total.innerText = `Total Price: $${finalPrice}`;
+    const programText =
+        program.options[program.selectedIndex].text;
 
-    result.style.color = "green";
-    result.innerText = "Request sent successfully!";
+    const durationText =
+        duration.options[duration.selectedIndex].text;
 
-    const message = `🔥 New Membership Request
+    // عرض السعر
+    total.innerText =
+        `Total Price: $${finalPrice}`;
 
-Name: ${name}
-Email: ${email}
-Program: ${programText}
-Duration: ${months} Month(s)
-Total: $${finalPrice}
+    // رسالة نجاح
+    result.style.color = "limegreen";
 
-Notes: ${messageField}`;
+    result.innerText =
+        "Membership request sent successfully 💪";
 
-    const phone = "2010xxxxxxxx";
+    // رسالة الواتساب
+    const message = `🏋️ New Gym Membership Request
 
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+👤 Username:
+${name}
 
+📞 Phone Number:
+${phoneNumber}
+
+📧 Email:
+${email || "Not Provided"}
+
+🔥 Program:
+${programText}
+
+📅 Subscription:
+${durationText}
+
+💵 Total Price:
+$${finalPrice}
+
+📅 Registration Day:
+${date1}
+
+⏰ Registration Time:
+${time1}
+
+📅 Expected Visit Day:
+${date2 || "Not Specified"}
+
+⏰ Expected Visit Time:
+${time2 || "Not Specified"}
+
+📝 Notes:
+${messageField || "No Notes"}`;
+
+    // رقم الواتساب
+    const phone = "2010XXXXXXXX";
+
+    // رابط الواتساب
+    const url =
+        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    // فتح واتساب
     setTimeout(() => {
+
         window.open(url, "_blank");
+
     }, 1000);
 
 });

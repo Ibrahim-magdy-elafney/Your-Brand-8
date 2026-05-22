@@ -26,34 +26,36 @@ body {
         align-items: center;
         margin: 10px;
         padding: 15px;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         text-align: center;
 
     }
 
-    .box {
+}
 
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        font-style: normal;
+.box {
 
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
 
-        flex-direction: column;
-        width: 100%;
-        gap: 15px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-        align-items: center;
+    flex-direction: row;
+    width: 450px;
+    gap: 15px;
 
-        color: #fff;
-        background: #1a1a1a;
-        border: 1px solid gray;
+    font-size: 10px;
+    margin-left: 3px;
 
-    }
+
+    color: #fff;
+    background: #1a1a1a;
+    border: 1px solid gray;
 
 }
 
@@ -191,16 +193,22 @@ select {
 
 }
 
+.Number {
+
+    color: white;
+
+}
+
 .Username {
 
     color: white;
 
 }
 
-
 .text {
 
     color: white;
+
 
 }
 
@@ -210,9 +218,77 @@ select {
 
 }
 
+.date {
+
+    color: white;
+
+}
+
+.time {
+
+    color: white;
+
+}
+
+.phone {
+
+    color: white;
+
+}
+
 .box a {
     color: white;
     text-decoration: none;
+}
+
+.Mainbox {
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    list-style: none;
+    width: 300px;
+    font-size: 11px;
+
+}
+
+.Mainbox a {
+
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.He {
+
+    display: flex;
+    align-self: flex-start;
+    margin-bottom: 100px;
+
+}
+
+.Tra {
+
+    display: flex;
+    align-self: flex-end;
+    margin-top: 100px;
+
+}
+
+.Cont {
+
+    display: flex;
+    align-self: flex-start;
+    margin-bottom: 100px;
+    justify-content: space-between;
+    margin-right: 30px;
+
 }
 
 .menu-card {
